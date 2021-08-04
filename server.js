@@ -1,8 +1,8 @@
 const http = require('http');
 
-const route = require('./routes/api');
-
 const port = process.env.PORT || 8000;
+
+const route = require('./routes/api');
 
 const server = http.createServer((req, res) => {
     res.setHeader("Content-Type", "application/json");
@@ -15,9 +15,9 @@ const server = http.createServer((req, res) => {
         return route.handleGetVideos(req, res);
     }
 
-    return route.respondNotFount(req, res);
+    return route.handleNotFound(req, res);
 })
 
 server.listen(port, () => {
-    console.log(`Listening on - ${port}`);
+    console.info(`[INFO] Listening on - ${port}`);
 })
