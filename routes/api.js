@@ -30,7 +30,7 @@ async function handleGetVideos(req, res) {
 
         const videosOnChannel = await apiService.fetchVideos(channelId);
 
-        logService.log(`Videos for channel - ${channelId} - ${JSON.stringify(videosOnChannel)}`);
+        logService.log(`Returning videos for channel - ${channelId}`);
 
         res.end(JSON.stringify(videosOnChannel));
     } catch (err) {
