@@ -102,6 +102,18 @@ function getVideosFromJson(json) {
         let videoObject = {};
         videoObject.title = video.title[0];
         videoObject.link = video.link[0]["$"]["href"];
+        videoObject.publishedDate = video.published[0];
+        videoObject.updatedDate = video.updated[0];
+
+        const mediaData = video["media:group"][0];
+        videoObject.content = mediaData["media:content"][0]["$"];
+        videoObject.thumbnail = mediaData["media:thumbnail"][0]["$"];
+        videoObject.description = mediaData["media:description"];
+
+        const ratingsAndStats = mediaData["media:community"][0];
+        video.starRatings = ratingsAndStats["media:starRating"][0]["$"];
+        video.views = ratingsAndStats["media:statistics"][0]["$"]["views"];
+
         videos.push(videoObject);
     })
 
