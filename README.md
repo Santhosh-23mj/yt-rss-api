@@ -5,7 +5,7 @@ A Simple Node.js API which fetches Youtube RSS Feed as XML and returns videos as
         - /channel/{{channelId}}
 
 Hitting the above route with curl / postman will return an array of objects
-```    
+```
     [
         {
             title: "Video Title",
