@@ -9,7 +9,28 @@ Hitting the above route with curl / postman will return an array of objects
     [
         {
             title: "Video Title",
-            link: "Link to the Video" 
+            link: "Link to the Video",
+            publishedDate: "Video published date",
+            updatedDate: "Video last updated date",
+            content: {
+                url: "Video URL",
+                type: "Content-Type",
+                width: "Video width",
+                height: "Video height"
+            },
+            thumbnail: {
+                url: "Link to thumbnail image",
+                width: "Thumbnail image width",
+                height: "Thumbnail image height"
+            },
+            description: "Video Description",
+            starRatings: {
+                count: "Total Ratings",
+                average: "Average Ratings",
+                min: "Minimum rating",
+                max: "Maximum rating"
+            },
+            views: "Video Views count"
         }
     ]
 ```
